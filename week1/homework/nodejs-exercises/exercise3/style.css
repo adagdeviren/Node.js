@@ -1,3 +1,6 @@
-.content{
-    background-color:yellow;
+#content{
+    background-color:palevioletred;
+    color:aliceblue;
+    font-size: 2rem;
+    height:5rem;
 }

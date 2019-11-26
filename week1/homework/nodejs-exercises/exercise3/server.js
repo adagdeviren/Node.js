@@ -1,4 +1,12 @@
 var http = require('http');
+let fs = require('fs');
+
+fs.readFile('./style.css', function(err, data) {
+  if (err){
+      throw err;
+  }
+  cssFile = data;
+});
 
 //create a server
 let server = http.createServer(function (req, res) {
@@ -10,6 +18,7 @@ let server = http.createServer(function (req, res) {
 
     } else if (req.url === '/style.css') {
         res.setHeader('Content-Type', 'text/css');
+        res.write(cssFile);
     } else {
         res.setHeader('Content-Type', 'text/html');
         res.write(`<html>
